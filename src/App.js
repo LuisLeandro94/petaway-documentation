@@ -1,7 +1,7 @@
 import Landing from './shared/components/Landing';
 import Endpoints from './shared/components/Endpoints'
 import About from './shared/components/About'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
