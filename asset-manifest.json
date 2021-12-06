@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/petaway-documentation/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/petaway-documentation/static/js/main.811e1a15.chunk.js",
-    "main.js.map": "/petaway-documentation/static/js/main.811e1a15.chunk.js.map",
+    "main.js": "/petaway-documentation/static/js/main.f038b15e.chunk.js",
+    "main.js.map": "/petaway-documentation/static/js/main.f038b15e.chunk.js.map",
     "runtime-main.js": "/petaway-documentation/static/js/runtime-main.f482c248.js",
     "runtime-main.js.map": "/petaway-documentation/static/js/runtime-main.f482c248.js.map",
-    "static/js/2.417ea245.chunk.js": "/petaway-documentation/static/js/2.417ea245.chunk.js",
-    "static/js/2.417ea245.chunk.js.map": "/petaway-documentation/static/js/2.417ea245.chunk.js.map",
+    "static/js/2.9e5fc0ff.chunk.js": "/petaway-documentation/static/js/2.9e5fc0ff.chunk.js",
+    "static/js/2.9e5fc0ff.chunk.js.map": "/petaway-documentation/static/js/2.9e5fc0ff.chunk.js.map",
     "static/js/3.c7f4e7ba.chunk.js": "/petaway-documentation/static/js/3.c7f4e7ba.chunk.js",
     "static/js/3.c7f4e7ba.chunk.js.map": "/petaway-documentation/static/js/3.c7f4e7ba.chunk.js.map",
     "index.html": "/petaway-documentation/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/petaway-documentation/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.417ea245.chunk.js.LICENSE.txt": "/petaway-documentation/static/js/2.417ea245.chunk.js.LICENSE.txt",
+    "static/js/2.9e5fc0ff.chunk.js.LICENSE.txt": "/petaway-documentation/static/js/2.9e5fc0ff.chunk.js.LICENSE.txt",
     "static/media/PetAway_logo.d02bc10a.png": "/petaway-documentation/static/media/PetAway_logo.d02bc10a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f482c248.js",
-    "static/js/2.417ea245.chunk.js",
+    "static/js/2.9e5fc0ff.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.811e1a15.chunk.js"
+    "static/js/main.f038b15e.chunk.js"
   ]
 }
