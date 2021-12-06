@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/petaway-documentation/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/petaway-documentation/static/js/main.f038b15e.chunk.js",
-    "main.js.map": "/petaway-documentation/static/js/main.f038b15e.chunk.js.map",
+    "main.js": "/petaway-documentation/static/js/main.48900978.chunk.js",
+    "main.js.map": "/petaway-documentation/static/js/main.48900978.chunk.js.map",
     "runtime-main.js": "/petaway-documentation/static/js/runtime-main.f482c248.js",
     "runtime-main.js.map": "/petaway-documentation/static/js/runtime-main.f482c248.js.map",
     "static/js/2.9e5fc0ff.chunk.js": "/petaway-documentation/static/js/2.9e5fc0ff.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.f482c248.js",
     "static/js/2.9e5fc0ff.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.f038b15e.chunk.js"
+    "static/js/main.48900978.chunk.js"
   ]
 }
