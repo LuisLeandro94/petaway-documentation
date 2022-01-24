@@ -1,0 +1,2049 @@
+{
+    "info": {
+        "_postman_id": "9641d678-4fc3-4e0a-b69d-09537778e44e",
+        "name": "Dev",
+        "description": "The **PetAway REST API** provides endpoints for Authorization, as well as *retrieving* Users, Resources, Pets and Walkers. On top of that, it also provides endpoints for *adding* Users and Walkers, as well as *updating* them.\n\n# Getting Started\n\nTo start sending requests to the PetAway API, make sure that you have the `Prod` environment selected in Postman.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Signup",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "3d37a4ba-0339-4e47-b61a-65a48566259d",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "210a323e-a0b0-4609-9c67-ac6d7c93520a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"testeapi@ipca.pt\",\n    \"password\": \"123456789\", \n    \"firstName\": \"Luís\",\n    \"lastName\": \"Bruno\", \n    \"postalCode\": \"2222-444\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/v1/auth/signup",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "v1",
+                                "auth",
+                                "signup"
+                            ]
+                        },
+                        "description": "Used to create an account in our application."
+                    },
+                    "response": [
+                        {
+                            "id": "3a1871e2-6384-4f85-bc17-eb7ae3b13a4e",
+                            "name": "Signup Response",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"email\": \"testeapi@ipca.pt\",\n    \"password\": \"123456789\", \n    \"firstName\": \"Luís\",\n    \"lastName\": \"Bruno\", \n    \"postalCode\": \"2222-444\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "http://localhost:3000/v1/auth/signup",
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "3000",
+                                    "path": [
+                                        "v1",
+                                        "auth",
+                                        "signup"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "191"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"bf-oPAevt2Yk+2w2SmnT7js+PGpmhc\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:08:22 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"result\": {\n        \"isDeleted\": false,\n        \"id\": 6,\n        \"email\": \"testeapi@ipca.pt\",\n        \"password\": \"123456789\",\n        \"updatedAt\": \"2022-01-17T15:08:22.130Z\",\n        \"createdAt\": \"2022-01-17T15:08:22.130Z\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Login",
+                    "id": "19996071-7338-403a-b7f3-e438500e7077",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"testeapi@ipca.pt\",\n    \"password\": \"123456789\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:3000/v1/auth/",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "3000",
+                            "path": [
+                                "v1",
+                                "auth",
+                                ""
+                            ]
+                        },
+                        "description": "Used to Log In in our application."
+                    },
+                    "response": [
+                        {
+                            "id": "2e789ae8-71db-4ef0-a14c-fa554f7c5c0b",
+                            "name": "Login Response",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"email\": \"testeapi@ipca.pt\",\n    \"password\": \"123456789\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "http://localhost:3000/v1/auth/",
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "3000",
+                                    "path": [
+                                        "v1",
+                                        "auth",
+                                        ""
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "182"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"b6-MvDrFTOzMdplbPLpt5usNZpb95I\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:08:57 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"result\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTY0MjQzMjEzNywiZXhwIjoxNjQyNTE4NTM3fQ.EuTGpKc3rM1o5CS8fqUp4QJVwK5iF3E7U16gtgnKr-s\"\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "9a0e1f30-3491-4dbe-8513-1e322adb4eda",
+            "description": "**Authentication** endpoint. This is where you can *Sign Up* and *Log In* to our application."
+        },
+        {
+            "name": "Users",
+            "item": [
+                {
+                    "name": "GetUserByJwt",
+                    "id": "c082a74d-3554-4141-8615-289cbe92a645",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/users",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users"
+                            ]
+                        },
+                        "description": "Used to retrieve logged user information."
+                    },
+                    "response": [
+                        {
+                            "id": "fd6d835a-69bb-4b5c-a9d6-b6759c501106",
+                            "name": "GetUserByJwt Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/users",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "407"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"197-CAPquZ5YfiFWdOy0kDMWNVgPtbU\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:09:45 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 6,\n        \"email\": \"testeapi@ipca.pt\",\n        \"password\": \"123456789\",\n        \"userData\": {\n            \"id\": 6,\n            \"userId\": 6,\n            \"firstName\": \"Luís\",\n            \"lastName\": \"Bruno\",\n            \"address_1\": null,\n            \"address_2\": null,\n            \"city\": null,\n            \"state\": null,\n            \"zip\": \"2222-444\",\n            \"country\": null,\n            \"profilePhoto\": null,\n            \"birthdate\": null,\n            \"phoneNumber\": null,\n            \"createdAt\": \"2022-01-17T15:08:22.135Z\",\n            \"updatedAt\": \"2022-01-17T15:08:22.135Z\"\n        },\n        \"isWalker\": false\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete User",
+                    "id": "e4896cf9-d25f-4402-907c-ac3942b2c116",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer {{token}}",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/users",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users"
+                            ]
+                        },
+                        "description": "Used to retrieve logged user information."
+                    },
+                    "response": [
+                        {
+                            "id": "a920d34f-cf1e-4e1d-a3bb-b5b3a3a1e2a9",
+                            "name": "Delete User",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer {{token}}",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/users",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ]
+                                }
+                            },
+                            "status": "No Content",
+                            "code": 204,
+                            "_postman_previewlanguage": "plain",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"28-tWj9FCTnq6Ye7kc2Mt5+nhqgvdE\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 24 Jan 2022 23:16:04 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": null
+                        }
+                    ]
+                },
+                {
+                    "name": "UpdateUser",
+                    "id": "6132eabb-8740-44bf-8b8a-d6ea2fb7ca88",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"firstName\": \"Bruno\",\n    \"lastName\": \"Luís\",\n    \"address_1\": \"address_1\",\n    \"address_2\": \"address_2\",\n    \"city\": \"city\",\n    \"state\": \"state\",\n    \"zip\": \"zip\",\n    \"country\": \"country\",\n    \"profilePhoto\": \"profilePhoto\",\n    \"birthdate\": \"birthdate\",\n    \"phoneNumber\": \"phoneNumber\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/users",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users"
+                            ]
+                        },
+                        "description": "Used to update the logged user information."
+                    },
+                    "response": [
+                        {
+                            "id": "5f35619c-d03b-461f-b0e1-e56e721ea544",
+                            "name": "UpdateUser",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"firstName\": \"Bruno\",\n    \"lastName\": \"Luís\",\n    \"address_1\": \"address_1\",\n    \"address_2\": \"address_2\",\n    \"city\": \"city\",\n    \"state\": \"state\",\n    \"zip\": \"zip\",\n    \"country\": \"country\",\n    \"profilePhoto\": \"profilePhoto\",\n    \"birthdate\": \"birthdate\",\n    \"phoneNumber\": \"phoneNumber\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{url}}/users",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "486"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"1e6-K5f/j35ytAT0Mgc4NKavVAaGj10\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:12:24 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 6,\n        \"email\": \"testeapi@ipca.pt\",\n        \"password\": \"123456789\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2022-01-17T15:08:22.130Z\",\n        \"updatedAt\": \"2022-01-17T15:08:22.130Z\",\n        \"userData\": {\n            \"id\": 6,\n            \"userId\": 6,\n            \"firstName\": \"Luís\",\n            \"lastName\": \"Bruno\",\n            \"address_1\": null,\n            \"address_2\": null,\n            \"city\": null,\n            \"state\": null,\n            \"zip\": \"2222-444\",\n            \"country\": null,\n            \"profilePhoto\": null,\n            \"birthdate\": null,\n            \"phoneNumber\": null,\n            \"createdAt\": \"2022-01-17T15:08:22.135Z\",\n            \"updatedAt\": \"2022-01-17T15:08:22.135Z\"\n        }\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "UpdateUserPassword",
+                    "id": "97b7adac-0f3a-464c-9e3a-8f3e37757a5b",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjM5NjgxMzAwLCJleHAiOjE2Mzk3Njc3MDB9.9ifjYwLubhR3qkDqUMOS91YclTOtlcdHVRome_K4BaI",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"password\": \"test\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/users/password",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                "password"
+                            ]
+                        },
+                        "description": "Used to update logged user password."
+                    },
+                    "response": [
+                        {
+                            "id": "48bb33f7-d41b-4009-aa90-ed7cdd675574",
+                            "name": "UpdateUserPassword",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjM5NjgxMzAwLCJleHAiOjE2Mzk3Njc3MDB9.9ifjYwLubhR3qkDqUMOS91YclTOtlcdHVRome_K4BaI",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"password\": \"test\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{url}}/users/password",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "users",
+                                        "password"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "526"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"20e-AnqHCr8Twk+HVG5x7NcuSN2ha+4\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:12:39 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 6,\n        \"email\": \"testeapi@ipca.pt\",\n        \"password\": \"test\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2022-01-17T15:08:22.130Z\",\n        \"updatedAt\": \"2022-01-17T15:12:39.767Z\",\n        \"userData\": {\n            \"id\": 6,\n            \"userId\": 6,\n            \"firstName\": \"Bruno\",\n            \"lastName\": \"Luís\",\n            \"address_1\": \"address_1\",\n            \"address_2\": \"address_2\",\n            \"city\": \"city\",\n            \"state\": \"state\",\n            \"zip\": \"zip\",\n            \"country\": \"country\",\n            \"profilePhoto\": \"profilePhoto\",\n            \"birthdate\": \"birthdate\",\n            \"phoneNumber\": \"phoneNumber\",\n            \"createdAt\": \"2022-01-17T15:08:22.135Z\",\n            \"updatedAt\": \"2022-01-17T15:12:24.971Z\"\n        }\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetUserById",
+                    "id": "7e2f390e-edd0-432f-902a-c46c4af418e7",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjM5NTE5MjI4LCJleHAiOjE2Mzk2MDU2Mjh9.Su1JBcbnKM2StrTk_vCoYi5zQK_jAIWafEVhgB92sk0",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/users?id=1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        "description": "Used to get user information based on their ID."
+                    },
+                    "response": [
+                        {
+                            "id": "71e628ce-a321-4d4d-a816-32bd4ba1e64a",
+                            "name": "GetUserById",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjM5NTE5MjI4LCJleHAiOjE2Mzk2MDU2Mjh9.Su1JBcbnKM2StrTk_vCoYi5zQK_jAIWafEVhgB92sk0",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/users?id=1",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "1"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "462"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"1ce-4KyC13z7owu4va+oVcuV+CGMIes\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:12:50 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"email\": \"teste@teste.pt\",\n        \"password\": \"29e78e2e9aae8668cae17dae726a9ca826731541b420b3aa472eb75fc6c9cfbf\",\n        \"userData\": {\n            \"id\": 1,\n            \"userId\": 1,\n            \"firstName\": \"Luís\",\n            \"lastName\": \"Leandro\",\n            \"address_1\": null,\n            \"address_2\": null,\n            \"city\": null,\n            \"state\": null,\n            \"zip\": \"4835-295\",\n            \"country\": null,\n            \"profilePhoto\": null,\n            \"birthdate\": null,\n            \"phoneNumber\": null,\n            \"createdAt\": \"2022-01-17T12:10:54.253Z\",\n            \"updatedAt\": \"2022-01-17T12:10:54.253Z\"\n        },\n        \"isWalker\": false\n    }\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "5d02fb27-39c1-4fad-8f34-4f46172c6ca8",
+            "description": "**Users** endpoint. This endpoint is used to manage user-related information.\n\nWith this endpoint we can *retrieve* an user information based on their JWT or ID, we can *update* the user profile and change the user password."
+        },
+        {
+            "name": "Resource",
+            "item": [
+                {
+                    "name": "GetAllResources",
+                    "id": "4f1f204d-20a9-4502-94ff-fae8d55cf3b0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0MTIzMDA0NSwiZXhwIjoxNjQxMzE2NDQ1ffdgdfgdfgQ.ld7O3aAMHkqGTs8Q7C1-OT3TUhc7-H57R1WH24JwM1Y",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "{{url}}/services",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "services"
+                            ]
+                        },
+                        "description": "Retrieves all the services listed in our database."
+                    },
+                    "response": [
+                        {
+                            "id": "b45423c7-4007-422a-8aa6-d4323c7bdfb7",
+                            "name": "GetAllResources",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0MTIzMDA0NSwiZXhwIjoxNjQxMzE2NDQ1ffdgdfgdfgQ.ld7O3aAMHkqGTs8Q7C1-OT3TUhc7-H57R1WH24JwM1Y",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{url}}/services",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "services"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "254"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"fe-9CmA81onn3zXc1ZGojQ33iRaU4w\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:13:03 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": [\n        {\n            \"id\": 1,\n            \"type\": \"Pet Walking\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        },\n        {\n            \"id\": 2,\n            \"type\": \"Pet Sitting\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetResourceById",
+                    "id": "c03b5b55-530b-46a4-b5eb-8b0e7071f7e6",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/services/1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "services",
+                                "1"
+                            ]
+                        },
+                        "description": "Retrieves a certain service by it's ID."
+                    },
+                    "response": [
+                        {
+                            "id": "35ac9367-f66d-40ca-a6fe-e23070ef9da9",
+                            "name": "GetResourceById",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/services/1",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "services",
+                                        "1"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "144"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"90-oOSB+H+NaDbTl7ARYffU4OV8xnM\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:13:11 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"type\": \"Pet Walking\",\n        \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n        \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n    }\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "215e4b4e-8ea8-4c5c-8af8-27ccac7799e7",
+            "description": "**Resource** endpoint. Used to *retrieve* the available Services that our application provides."
+        },
+        {
+            "name": "Pets",
+            "item": [
+                {
+                    "name": "GetAllPets",
+                    "id": "2e1c3f5a-96cc-41a3-ab10-66ca40d6b5a5",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU1NTIzLCJleHAiOjE2NDEyNDE5MjN9.BwiTzSORgrMzOLhI383DIYav7SEEeGtU_ejr-LEreb0",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/pets",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets"
+                            ]
+                        },
+                        "description": "Used to retrieve a list of all the Pets in our database."
+                    },
+                    "response": [
+                        {
+                            "id": "1353f10e-706d-4f90-983d-d3bd0b060429",
+                            "name": "GetAllPets",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU1NTIzLCJleHAiOjE2NDEyNDE5MjN9.BwiTzSORgrMzOLhI383DIYav7SEEeGtU_ejr-LEreb0",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/pets",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "pets"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "544"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"220-lLAf3dfNfKvQPNW4GJiG4pqB0hM\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:13:21 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": [\n        {\n            \"id\": 1,\n            \"type\": \"Dog\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        },\n        {\n            \"id\": 2,\n            \"type\": \"Cat\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        },\n        {\n            \"id\": 3,\n            \"type\": \"Wife\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        },\n        {\n            \"id\": 4,\n            \"type\": \"Shark\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        },\n        {\n            \"id\": 5,\n            \"type\": \"Turtle\",\n            \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n            \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPetById",
+                    "id": "7169908c-384f-4634-bd60-2c873b3aeb2f",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/pets/1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets",
+                                "1"
+                            ]
+                        },
+                        "description": "Used to retrieve the information of a Pet, based on it's ID."
+                    },
+                    "response": [
+                        {
+                            "id": "9fe83fd0-a8fb-4820-a204-9cb9cc30a1ac",
+                            "name": "GetPetById",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/pets/1",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "pets",
+                                        "1"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "136"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"88-3Wzg0xg5vRDoh8cvMq/ONIlv7m0\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:13:32 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"type\": \"Dog\",\n        \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n        \"updatedAt\": \"2022-01-12T10:51:17.600Z\"\n    }\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "28fecd88-101e-45e0-ab79-e7d7cafbe265",
+            "description": "**Pets** endpoint. Used to *retrieve* information about the Pets."
+        },
+        {
+            "name": "Walkers",
+            "item": [
+                {
+                    "name": "AddWalker",
+                    "id": "151d7872-e6cb-4bc0-a37a-28dc91bd13b5",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0MTIzMTk0NSwiZXhwIjoxNjQxMzE4MzQ1fQ.hrS-im_O-VJFG6Nm_BUrcierIoHZgiXE5UAh6ZJk3ps",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"services\":[1],\n    \"pets\":[1,2,3]\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/walkers",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "walkers"
+                            ]
+                        },
+                        "description": "Used to create a Walker.\n\nIt transforms a User account into a Walker account."
+                    },
+                    "response": [
+                        {
+                            "id": "4c7e665d-a46b-46e1-b7f7-031a5b2b0640",
+                            "name": "AddWalker",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY0MTIzMTk0NSwiZXhwIjoxNjQxMzE4MzQ1fQ.hrS-im_O-VJFG6Nm_BUrcierIoHZgiXE5UAh6ZJk3ps",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"services\":[1],\n    \"pets\":[1,2,3]\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{url}}/walkers",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "walkers"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "152"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"98-WcrITi/tsLUKyoL7j2TsNuSrNxQ\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:13:52 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"result\": {\n        \"id\": 3,\n        \"userId\": 6,\n        \"isDeleted\": false,\n        \"updatedAt\": \"2022-01-17T15:13:52.010Z\",\n        \"createdAt\": \"2022-01-17T15:13:52.010Z\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetWalkerById",
+                    "id": "5a58c031-35ea-4ba0-949d-2e6c0a839312",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/walkers/1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "walkers",
+                                "1"
+                            ]
+                        },
+                        "description": "Used to retrieve the information of a given Walker, based on it's ID."
+                    },
+                    "response": [
+                        {
+                            "id": "f801f2b2-9455-47ac-abff-9f58aa1b12e2",
+                            "name": "GetWalkerById",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE1OSwiaWF0IjoxNjQxMTU0Mjg1LCJleHAiOjE2NDEyNDA2ODV9.RFJLvKpEvh3dValRUnZ4Lts_xLrPjdiOEO8eit7lPzI",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/walkers/1",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "walkers",
+                                        "1"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "152"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"98-fwhmF09NgR8lnbzAb0M/57FNRJ0\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:14:05 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"userId\": 2,\n        \"isDeleted\": false,\n        \"createdAt\": \"2022-01-17T12:11:49.021Z\",\n        \"updatedAt\": \"2022-01-17T12:11:49.021Z\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetAllWalkers",
+                    "id": "e4214b2a-cb4e-44c1-90da-676a90e645c0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "authorization",
+                                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY0MjI4NzYxMywiZXhwIjoxNjQyMzc0MDEzfQ.JtRjHTmGJwBEg6H8ULwXE2b7GJCpb0g4vQ6byZzhFt0",
+                                "type": "text",
+                                "disabled": true
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{url}}/walkers?services=[1]&pets=[1]&city=Guimarães",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "walkers"
+                            ],
+                            "query": [
+                                {
+                                    "key": "services",
+                                    "value": "[1]"
+                                },
+                                {
+                                    "key": "pets",
+                                    "value": "[1]"
+                                },
+                                {
+                                    "key": "city",
+                                    "value": "Guimarães"
+                                }
+                            ]
+                        },
+                        "description": "Used to retrieve the information of all Walkers based on a query:\n\n*   Pet that the Walker intends to take care of;\n*   Service that the Walker provides;\n*   City where Walker lives in."
+                    },
+                    "response": [
+                        {
+                            "id": "ba82d98a-e139-41bd-9c53-b9d8bee7c6a8",
+                            "name": "GetAllWalkers",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "authorization",
+                                        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY0MjI4NzYxMywiZXhwIjoxNjQyMzc0MDEzfQ.JtRjHTmGJwBEg6H8ULwXE2b7GJCpb0g4vQ6byZzhFt0",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{url}}/walkers?services=[1]&pets=[1]&city=Guimarães",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "walkers"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "services",
+                                            "value": "[1]"
+                                        },
+                                        {
+                                            "key": "pets",
+                                            "value": "[1]"
+                                        },
+                                        {
+                                            "key": "city",
+                                            "value": "Guimarães"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "24190"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"5e7e-E3NAX5bvs7NV2HS7DbeLw7Fg6bk\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:14:34 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": [\n        {\n            \"id\": 1,\n            \"userId\": 2,\n            \"isDeleted\": false,\n            \"createdAt\": \"2022-01-17T12:11:49.021Z\",\n            \"updatedAt\": \"2022-01-17T12:11:49.021Z\",\n            \"services\": [\n                {\n                    \"id\": 1,\n                    \"type\": \"Pet Walking\",\n                    \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n                    \"updatedAt\": \"2022-01-12T10:51:17.600Z\",\n                    \"walker_services\": {\n                        \"createdAt\": \"2022-01-17T12:11:49.029Z\",\n                        \"updatedAt\": \"2022-01-17T12:11:49.029Z\",\n                        \"serviceId\": 1,\n                        \"walkerId\": 1\n                    }\n                }\n            ],\n            \"pets\": [\n                {\n                    \"id\": 1,\n                    \"type\": \"Dog\",\n                    \"createdAt\": \"2022-01-12T10:51:17.600Z\",\n                    \"updatedAt\": \"2022-01-12T10:51:17.600Z\",\n                    \"walker_pets\": {\n                        \"createdAt\": \"2022-01-17T12:11:49.035Z\",\n                        \"updatedAt\": \"2022-01-17T12:11:49.035Z\",\n                        \"petId\": 1,\n                        \"walkerId\": 1\n                    }\n                }\n            ],\n            \"user\": {\n                \"id\": 2,\n                \"email\": \"teste1@teste.pt\",\n                \"password\": \"29e78e2e9aae8668cae17dae726a9ca826731541b420b3aa472eb75fc6c9cfbf\",\n                \"isDeleted\": false,\n                \"createdAt\": \"2022-01-17T12:11:06.451Z\",\n                \"updatedAt\": \"2022-01-17T12:11:06.451Z\",\n                \"userData\": {\n                    \"id\": 2,\n                    \"userId\": 2,\n                    \"firstName\": \"Luís\",\n                    \"lastName\": \"Leandro\",\n                    \"address_1\": \"Rua 1º de Maio\",\n                    \"address_2\": \"123\",\n                    \"city\": \"Guimarães\",\n                    \"state\": \"Guimarães\",\n                    \"zip\": \"4835-295\",\n                    \"country\": \"Portugal\",\n                    \"profilePhoto\": \"data:image/png;base64,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\",\n                    \"birthdate\": \"16/07/1994\",\n                    \"phoneNumber\": \"917688021\",\n                    \"createdAt\": \"2022-01-17T12:11:06.456Z\",\n                    \"updatedAt\": \"2022-01-17T12:11:42.630Z\"\n                }\n            }\n        }\n    ]\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "ef974895-3943-4de6-b5b0-8d6853092661",
+            "description": "**Walkers** endpoint.\n\nWith this endpoint we can *create* a Walker, as well as *retrieving* their information."
+        },
+        {
+            "name": "Events",
+            "item": [
+                {
+                    "name": "GetUserEvents",
+                    "id": "f10e3844-05c8-4565-acb0-4d5de8fe2655",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/events/user",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "events",
+                                "user"
+                            ]
+                        },
+                        "description": "Used to retrieve a list of events for a given user."
+                    },
+                    "response": [
+                        {
+                            "id": "8d054626-7e22-42ff-937b-1e8dbe550864",
+                            "name": "GetUserEvents",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{url}}/events/user",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "events",
+                                        "user"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "221"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"dd-gCzeTTCxI8ErTDX2kOX4bn3nVTw\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:14:57 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": [\n        {\n            \"id\": 1,\n            \"userId\": 6,\n            \"walkerId\": 1,\n            \"resourceId\": 1,\n            \"petId\": \"1\",\n            \"status\": 1,\n            \"date\": \"2022-01-16T23:29:14.525Z\",\n            \"createdAt\": \"2022-01-17T15:14:46.506Z\",\n            \"updatedAt\": \"2022-01-17T15:14:46.506Z\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "GetWalkerEvents",
+                    "id": "163becd7-3365-43b4-a547-6610e98d3104",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/events/walker?walkerId=1",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "events",
+                                "walker"
+                            ],
+                            "query": [
+                                {
+                                    "key": "walkerId",
+                                    "value": "1"
+                                }
+                            ]
+                        },
+                        "description": "Used to retrieve a list of events for a given Walker."
+                    },
+                    "response": [
+                        {
+                            "id": "1e7dcbd6-9448-423e-b583-d8f909e6d798",
+                            "name": "GetWalkerEvents",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{url}}/events/walker?walkerId=1",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "events",
+                                        "walker"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "walkerId",
+                                            "value": "1"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "221"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"dd-gCzeTTCxI8ErTDX2kOX4bn3nVTw\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:15:16 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": [\n        {\n            \"id\": 1,\n            \"userId\": 6,\n            \"walkerId\": 1,\n            \"resourceId\": 1,\n            \"petId\": \"1\",\n            \"status\": 1,\n            \"date\": \"2022-01-16T23:29:14.525Z\",\n            \"createdAt\": \"2022-01-17T15:14:46.506Z\",\n            \"updatedAt\": \"2022-01-17T15:14:46.506Z\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "CreateEvent",
+                    "id": "fd79f18a-ce84-4ef1-afd1-e642b68f491a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"walkerId\": 1,\r\n    \"petId\": 1,\r\n    \"serviceId\": 1,\r\n    \"date\": \"2022-01-16 23:29:14.525+00\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/events",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "events"
+                            ]
+                        },
+                        "description": "Used to create an Event."
+                    },
+                    "response": [
+                        {
+                            "id": "64bdadfa-eef0-4f82-b14f-222c0d75b2d7",
+                            "name": "CreateEvent",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"walkerId\": 1,\r\n    \"petId\": 1,\r\n    \"serviceId\": 1,\r\n    \"date\": \"2022-01-16 23:29:14.525+00\"\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{url}}/events",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "events"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "219"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"db-VRk8IlAta5O8svrC29v5e/rPnYk\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:14:46 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"result\": {\n        \"id\": 1,\n        \"userId\": 6,\n        \"walkerId\": 1,\n        \"resourceId\": 1,\n        \"petId\": \"1\",\n        \"date\": \"2022-01-16T23:29:14.525Z\",\n        \"status\": 1,\n        \"updatedAt\": \"2022-01-17T15:14:46.506Z\",\n        \"createdAt\": \"2022-01-17T15:14:46.506Z\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "UpdateEventStatus",
+                    "id": "1b2d88ec-ef6d-45e9-be40-495505f434dd",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{token}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"eventId\": 1,\r\n    \"status\": 2\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/events",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "events"
+                            ]
+                        },
+                        "description": "Used to change the event status."
+                    },
+                    "response": [
+                        {
+                            "id": "6ec43162-227f-4563-9239-6053633b12bd",
+                            "name": "UpdateEventStatus",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\r\n    \"eventId\": 1,\r\n    \"status\": 2\r\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{url}}/events",
+                                    "host": [
+                                        "{{url}}"
+                                    ],
+                                    "path": [
+                                        "events"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "Express"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json; charset=utf-8"
+                                },
+                                {
+                                    "key": "Content-Length",
+                                    "value": "219"
+                                },
+                                {
+                                    "key": "ETag",
+                                    "value": "W/\"db-w+LnOGljaH19AvK51YLGQOAFBpg\""
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 17 Jan 2022 15:15:26 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=5"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"result\": {\n        \"id\": 1,\n        \"userId\": 6,\n        \"walkerId\": 1,\n        \"resourceId\": 1,\n        \"petId\": \"1\",\n        \"status\": 2,\n        \"date\": \"2022-01-16T23:29:14.525Z\",\n        \"createdAt\": \"2022-01-17T15:14:46.506Z\",\n        \"updatedAt\": \"2022-01-17T15:15:26.310Z\"\n    }\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "f01fbb01-6806-4429-ad16-2dfca69ce43a",
+            "description": "**Events** endpoint.\n\nUsed to *manage* Service Requests."
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "id": "219991a5-1e07-413e-9e0d-5841d285c6ce",
+            "key": "baseUrl",
+            "value": "localhost:3000",
+            "type": "string"
+        }
+    ]
+}
